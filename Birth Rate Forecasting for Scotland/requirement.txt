@@ -1,7 +1,7 @@
 pandas
 geopandas
 numpy
-plotly
+plotly>=5.0.0
 matplotlib
 seaborn
 prophet
