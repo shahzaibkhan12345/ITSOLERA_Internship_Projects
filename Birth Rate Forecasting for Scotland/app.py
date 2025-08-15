@@ -41,6 +41,12 @@ st.markdown(
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }}
+    .metric-card h2, .metric-card h4 {{
+        color: {PRIMARY_COLOR} !important;
+    }}
+    .metric-card small {{
+        color: #666666 !important;
+    }}
     h1, h2, h3, h4 {{ color: {PRIMARY_COLOR}; }}
     </style>
     """,
@@ -212,4 +218,5 @@ with col3:
 st.markdown("---")
 
 st.caption("Updated automatically | Data sources: National Records of Scotland")
+
 
