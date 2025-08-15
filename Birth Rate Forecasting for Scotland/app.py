@@ -52,7 +52,7 @@ st.markdown(
 def load_data():
     forecasts = pd.read_csv(os.path.join(os.path.dirname(__file__), "forecasts.csv"))
 
-    actuals = pd.read_csv("actuals.csv")
+    actuals = pd.read_csv(os.path.join(os.path.dirname(__file__), "actuals.csv"))
     # Standardise date cols
     forecasts["ds"] = pd.to_datetime(forecasts["ds"])
     actuals["Registration Year"] = pd.to_datetime(
@@ -212,3 +212,4 @@ with col3:
 st.markdown("---")
 
 st.caption("Updated automatically | Data sources: National Records of Scotland")
+
