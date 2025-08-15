@@ -5,6 +5,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 import base64
 from pathlib import Path
+import os
 
 # ---------- CONFIG ----------
 st.set_page_config(
@@ -49,7 +50,8 @@ st.markdown(
 # ---------- DATA ----------
 @st.cache_data
 def load_data():
-    forecasts = pd.read_csv("forecasts.csv")
+    forecasts = pd.read_csv(os.path.join(os.path.dirname(__file__), "forecasts.csv"))
+
     actuals = pd.read_csv("actuals.csv")
     # Standardise date cols
     forecasts["ds"] = pd.to_datetime(forecasts["ds"])
@@ -208,4 +210,5 @@ with col3:
 
 # ---------- FOOTER ----------
 st.markdown("---")
+
 st.caption("Updated automatically | Data sources: National Records of Scotland")
